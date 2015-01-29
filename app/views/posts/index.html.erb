@@ -1,0 +1,19 @@
+<h1>Welcome to the Rumblr</h1>
+
+<%= form_for(@post) do |f| %>
+  <%= f.label :image_url %>
+  <%= f.text_field :image_url %>
+  <%= f.label :caption %>
+  <%= f.text_field :caption %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <%= f.submit %>
+<% end %>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= image_tag("#{post.image_url}") %></li>
+    <li><%= post.caption %></li>
+    <li><%= post.username %></li>
+  <% end %>
+</ul>
